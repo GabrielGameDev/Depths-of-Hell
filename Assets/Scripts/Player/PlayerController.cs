@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -16,6 +17,20 @@ public class PlayerController : MonoBehaviour
 	bool usedDoubleJump;
 	AudioSource audioSource;
 	float targetVelocityX = 0f;
+	public bool jumpPressed;
+
+	[Header("Wall")]
+	public bool onWall;
+	public Vector3 wallOffset;
+	public float wallRadius;
+	public float maxFallSpeed = -1;
+	public float wallJumpDuration = 0.25f;
+	public bool jumpFromWall;
+	public float jumpFinish;
+	public LayerMask wallLayer;
+	bool canMove = true;
+	public float horizontalJumpForce = 6;
+	public int direction = 1;
 
 	public bool CanDoubleJump { get => canDoubleJump; set => canDoubleJump = value; }
 
@@ -47,7 +62,19 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);			
 		}
-        if(Input.GetButtonUp("Jump"))
+		else if (jumpPressed && onWall && !isGrounded)
+		{
+			canMove = false;
+			jumpFinish = Time.time + wallJumpDuration;
+			jumpPressed = false;
+			jumpFromWall = true;
+			//Flip();
+
+			rb.linearVelocity = Vector2.zero;
+
+			rb.AddForce(new Vector2(horizontalJumpForce * direction, jumpForce), ForceMode2D.Impulse);
+		}
+		if (Input.GetButtonUp("Jump"))
         {
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
 		}
@@ -62,13 +89,30 @@ public class PlayerController : MonoBehaviour
 		Vector3 pos = transform.position;
 		pos.x = Mathf.Clamp(pos.x, screenLimit.x, screenLimit.y);		
 		transform.position = pos;
-        
-    }
+
+		//check wall
+		bool rightWall = Physics2D.OverlapCircle(transform.position + new Vector3(wallOffset.x, 0), wallRadius, wallLayer);
+		bool leftWall = Physics2D.OverlapCircle(transform.position + new Vector3(-wallOffset.x, 0), wallRadius, wallLayer);
+		if (rightWall || leftWall)
+		{
+			onWall = true;
+		}
+
+		if (onWall)
+		{
+			if (rb.linearVelocity.y < maxFallSpeed)
+			{
+				rb.linearVelocity = new Vector2(rb.linearVelocity.x, maxFallSpeed);
+			}
+		}
+	}
 
 	private void FixedUpdate()
 	{
 		float newVelocityX = Mathf.Lerp(rb.linearVelocity.x, targetVelocityX, stoppingSpeed * Time.fixedDeltaTime);
 		rb.linearVelocity = new Vector2(newVelocityX, rb.linearVelocity.y);
+
+		
 	}
 
 	RaycastHit2D Raycast(Vector2 offset, Vector2 rayDirection, float length, LayerMask mask)
