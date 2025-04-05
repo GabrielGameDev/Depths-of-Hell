@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f; 
+	public float stoppingSpeed = 5f;
     public float jumpForce = 5f; 
     public LayerMask groundLayer;
 	public float footOffset = 0.5f;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
 	private bool canDoubleJump;
 	bool usedDoubleJump;
 	AudioSource audioSource;
+	float targetVelocityX = 0f;
 
 	public bool CanDoubleJump { get => canDoubleJump; set => canDoubleJump = value; }
 
@@ -49,8 +51,14 @@ public class PlayerController : MonoBehaviour
         {
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
 		}
+		float moveInput = Input.GetAxis("Horizontal");
 
-        
+		// Deadzone para joystick
+		if (Mathf.Abs(moveInput) < 0.1f)
+			moveInput = 0f;
+
+		targetVelocityX = moveInput * speed;
+
 		Vector3 pos = transform.position;
 		pos.x = Mathf.Clamp(pos.x, screenLimit.x, screenLimit.y);		
 		transform.position = pos;
@@ -59,8 +67,8 @@ public class PlayerController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		float moveInput = Input.GetAxis("Horizontal");
-		rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
+		float newVelocityX = Mathf.Lerp(rb.linearVelocity.x, targetVelocityX, stoppingSpeed * Time.fixedDeltaTime);
+		rb.linearVelocity = new Vector2(newVelocityX, rb.linearVelocity.y);
 	}
 
 	RaycastHit2D Raycast(Vector2 offset, Vector2 rayDirection, float length, LayerMask mask)

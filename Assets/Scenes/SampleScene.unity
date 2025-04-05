@@ -884,7 +884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 633632161}
   - component: {fileID: 633632160}
-  - component: {fileID: 633632159}
+  - component: {fileID: 633632162}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -892,37 +892,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &633632159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633632158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886251e9a18ece04ea8e61686c173e1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CameraDistance: 10
-  DeadZoneDepth: 0
-  Composition:
-    ScreenPosition: {x: 0, y: 0}
-    DeadZone:
-      Enabled: 1
-      Size: {x: 1, y: 0.4}
-    HardLimits:
-      Enabled: 0
-      Size: {x: 1.06, y: 1}
-      Offset: {x: 0, y: 0}
-  CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 4.44, z: 0}
-  Damping: {x: 1, y: 1, z: 1}
-  Lookahead:
-    Enabled: 0
-    Time: 0
-    Smoothing: 0
-    IgnoreY: 0
 --- !u!114 &633632160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,7 +912,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 1864585446}
+    TrackingTarget: {fileID: 0}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -981,6 +950,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &633632162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633632158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8d869b8e4a9c048b0bd0125afc1665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: {x: 0, y: 2}
 --- !u!1 &667105444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,8 +2017,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelTrigger: {fileID: 8226293869547899951, guid: 7d58b09919dca024cbd3bcc98ec6a11e, type: 3}
   nextlevelNotification: {fileID: 1824397219797277952, guid: 4c6ecc69920febc4e85a9cbacab8a53d, type: 3}
-  lava: {fileID: 1718156298}
-  lavaIncreaseSpeed: 1.2
+  lava: {fileID: 633632162}
+  lavaIncreaseSpeed: 1.1
   levelText: {fileID: 667105446}
   platformSettings:
   - platformPrefab:
@@ -2106,6 +2088,19 @@ MonoBehaviour:
     height: {x: 3, y: 5}
     numberOfPlatforms: 20
     levelSound: {fileID: 8300000, guid: 3d42a1a140833564c87cee286f08d823, type: 3}
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls: []
+  - platformPrefab:
+    - {fileID: 701022111598437162, guid: c52da6e91d007dd479312c9aff8fb353, type: 3}
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    enemyPrefab:
+    - {fileID: 2000813775767147505, guid: e9821a171835ee148a685b06b1ce46b2, type: 3}
+    spawnEnemyChance: 0.5
+    spawnPosition: {x: -7, y: 7}
+    height: {x: 3, y: 6}
+    numberOfPlatforms: 20
+    levelSound: {fileID: 8300000, guid: 5f389069619ec0c40822a1b6436f8c63, type: 3}
     OnStartLevel:
       m_PersistentCalls:
         m_Calls: []
@@ -3053,6 +3048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  stoppingSpeed: 7.5
   jumpForce: 16
   groundLayer:
     serializedVersion: 2

@@ -74,12 +74,13 @@ public class PlatformSpawner : MonoBehaviour
 		lava.moveSpeed *= lavaIncreaseSpeed;
 	}
 
-	public void UpdateLevelText()
+	public async void UpdateLevelText()
 	{
-		platformSettings[index - 1].OnStartLevel.Invoke();
-		audioSource.PlayOneShot(platformSettings[index - 1].levelSound);
+		platformSettings[index - 1].OnStartLevel.Invoke();		
 		levelText.text = "DEPTH " + index;
 		Invoke("DisableText", 3f);
+		await Awaitable.WaitForSecondsAsync(0.5f);
+		audioSource.PlayOneShot(platformSettings[index - 1].levelSound);
 	}
 
 	private void DisableText()
