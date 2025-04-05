@@ -8,6 +8,7 @@ public class PlatformSettings
 	public Vector2 spawnPosition;
 	public Vector2 height;
 	public int numberOfPlatforms;
+	public AudioClip levelSound;
 	
 }
 
@@ -21,18 +22,20 @@ public class PlatformSpawner : MonoBehaviour
     public PlatformSettings[] platformSettings;
 	Vector2 lastPlatformPosition;
     int index;
+	AudioSource audioSource;
 
 	private void Awake()
 	{
 		instance = this;
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
-    {
-		UpdateLevelText();
+    {		
 		NextLevel();
-    }
+		UpdateLevelText();
+	}
 
     void SpawnPlatform(int i)
     {
@@ -64,6 +67,7 @@ public class PlatformSpawner : MonoBehaviour
 
 	public void UpdateLevelText()
 	{
+		audioSource.PlayOneShot(platformSettings[index - 1].levelSound);
 		levelText.text = "DEPTH " + index;
 		Invoke("DisableText", 3f);
 	}
