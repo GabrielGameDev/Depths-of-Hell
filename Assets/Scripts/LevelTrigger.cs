@@ -15,7 +15,7 @@ public class LevelTrigger : MonoBehaviour
 			}
 			else
 			{
-				Debug.Log("Level Triggered");
+				PlatformSpawner.instance.UpdateLevelText();
 				Destroy(gameObject);
 			}
 			

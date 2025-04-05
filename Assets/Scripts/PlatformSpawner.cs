@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 [System.Serializable]
@@ -16,6 +17,7 @@ public class PlatformSpawner : MonoBehaviour
 	public GameObject levelTrigger, nextlevelNotification;
 	public Mover lava;
 	public float lavaIncreaseSpeed;
+	public TMP_Text levelText;
     public PlatformSettings[] platformSettings;
 	Vector2 lastPlatformPosition;
     int index;
@@ -28,7 +30,8 @@ public class PlatformSpawner : MonoBehaviour
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
     {
-        NextLevel();
+		UpdateLevelText();
+		NextLevel();
     }
 
     void SpawnPlatform(int i)
@@ -57,5 +60,16 @@ public class PlatformSpawner : MonoBehaviour
 		}
 		index++;
 		lava.moveSpeed *= lavaIncreaseSpeed;
+	}
+
+	public void UpdateLevelText()
+	{
+		levelText.text = "DEPTH " + index;
+		Invoke("DisableText", 3f);
+	}
+
+	private void DisableText()
+	{
+		levelText.text = "";
 	}
 }
