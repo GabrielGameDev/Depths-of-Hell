@@ -7,16 +7,21 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 	public float footOffset = 0.5f;
 	public float groundCheckDistance = 0.2f;
+	public AudioClip[] jumpSounds;
     public Vector2 screenLimit;
 	private Rigidbody2D rb; 
     private bool isGrounded;
-    
-    
+	private bool canDoubleJump;
+	bool usedDoubleJump;
+	AudioSource audioSource;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+	public bool CanDoubleJump { get => canDoubleJump; set => canDoubleJump = value; }
+
+	// Start is called once before the first execution of Update after the MonoBehaviour is created
+	void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+		audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,9 +32,18 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D leftCheck = Raycast(new Vector2(-footOffset, 0), Vector2.down, groundCheckDistance, groundLayer);
         isGrounded = rightCheck || leftCheck;
         
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if(Input.GetButtonDown("Jump") && (isGrounded))
         {
+			audioSource.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.Length)]);			
 			rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            usedDoubleJump = false;
+		}
+        else if(Input.GetButtonDown("Jump") && (canDoubleJump && !usedDoubleJump))
+        {
+			audioSource.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.Length)]);
+			usedDoubleJump = true;            
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);			
 		}
         if(Input.GetButtonUp("Jump"))
         {
