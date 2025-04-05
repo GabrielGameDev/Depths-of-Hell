@@ -2041,23 +2041,51 @@ MonoBehaviour:
   platformSettings:
   - platformPrefab:
     - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    enemyPrefab: []
+    spawnEnemyChance: 0
     spawnPosition: {x: -4, y: 4}
     height: {x: 2, y: 4}
     numberOfPlatforms: 20
     levelSound: {fileID: 8300000, guid: 006e0eef0aece6f45918517e9cbc30f6, type: 3}
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls: []
   - platformPrefab:
     - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
     - {fileID: 4984320992431730783, guid: 219077f1b375e7e47bf9524abb449d67, type: 3}
+    enemyPrefab: []
+    spawnEnemyChance: 0
     spawnPosition: {x: -4, y: 4}
     height: {x: 2, y: 4}
     numberOfPlatforms: 20
     levelSound: {fileID: 8300000, guid: 3fc4110d071638347809809acd33c86e, type: 3}
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls: []
   - platformPrefab:
     - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    enemyPrefab:
+    - {fileID: 3150985223825127243, guid: 09fafe66bc1dc2442848684536ef992f, type: 3}
+    spawnEnemyChance: 0.5
     spawnPosition: {x: -4, y: 4}
     height: {x: 2, y: 4}
     numberOfPlatforms: 20
     levelSound: {fileID: 8300000, guid: 9b5fdc88f1de15c4783af2e4f938f0f9, type: 3}
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls: []
+  - platformPrefab:
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    enemyPrefab:
+    - {fileID: 3150985223825127243, guid: 09fafe66bc1dc2442848684536ef992f, type: 3}
+    spawnEnemyChance: 0.5
+    spawnPosition: {x: -4, y: 4}
+    height: {x: 2, y: 4}
+    numberOfPlatforms: 20
+    levelSound: {fileID: 8300000, guid: e2682c4611fe5914eb06c03766e9d65a, type: 3}
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!4 &1361447274
 Transform:
   m_ObjectHideFlags: 0
@@ -2629,7 +2657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1718156294
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,14 +1,18 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class PlatformSettings
 {
 	public GameObject[] platformPrefab;
+	public GameObject[] enemyPrefab;
+	public float spawnEnemyChance;
 	public Vector2 spawnPosition;
 	public Vector2 height;
 	public int numberOfPlatforms;
 	public AudioClip levelSound;
+	public UnityEvent OnStartLevel;
 	
 }
 
@@ -45,6 +49,11 @@ public class PlatformSpawner : MonoBehaviour
         int randomIndex = Random.Range(0, platformSettings[index].platformPrefab.Length);
         GameObject platform = Instantiate(platformSettings[index].platformPrefab[randomIndex], randomPos, Quaternion.identity);
         lastPlatformPosition = platform.transform.position;
+		if(Random.value < platformSettings[index].spawnEnemyChance)
+		{
+			Instantiate(platformSettings[index].enemyPrefab[Random.Range(0, platformSettings[index].enemyPrefab.Length)],
+				platform.transform.position + Vector3.up, Quaternion.identity);
+		}
         if(i == platformSettings[index].numberOfPlatforms - 1) 
 		{ 
 			Instantiate(nextlevelNotification, new Vector2(platform.transform.position.x, platform.transform.position.y), Quaternion.identity);
@@ -67,6 +76,7 @@ public class PlatformSpawner : MonoBehaviour
 
 	public void UpdateLevelText()
 	{
+		platformSettings[index - 1].OnStartLevel.Invoke();
 		audioSource.PlayOneShot(platformSettings[index - 1].levelSound);
 		levelText.text = "DEPTH " + index;
 		Invoke("DisableText", 3f);
