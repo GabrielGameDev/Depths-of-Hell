@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 	public float footOffset = 0.5f;
 	public float groundCheckDistance = 0.2f;
+    public Vector2 screenLimit;
 	private Rigidbody2D rb; 
     private bool isGrounded;
     
@@ -34,6 +35,11 @@ public class PlayerController : MonoBehaviour
         {
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
 		}
+
+        
+		Vector3 pos = transform.position;
+		pos.x = Mathf.Clamp(pos.x, screenLimit.x, screenLimit.y);		
+		transform.position = pos;
         
     }
 
