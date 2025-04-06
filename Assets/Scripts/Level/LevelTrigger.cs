@@ -10,12 +10,12 @@ public class LevelTrigger : MonoBehaviour
 		{
 			if (spawnLevel)
 			{
-				PlatformSpawner.instance.NextLevel();
+				FindFirstObjectByType<PlatformSpawner>().NextLevel();
 				Destroy(gameObject);
 			}
 			else
 			{
-				PlatformSpawner.instance.UpdateLevelText();
+				FindFirstObjectByType<PlatformSpawner>().UpdateLevelText();
 				Destroy(gameObject);
 			}
 			
