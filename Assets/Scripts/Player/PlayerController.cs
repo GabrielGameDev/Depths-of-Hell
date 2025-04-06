@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
 				rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
 				usedDoubleJump = false;
 			}
-			else if (hasDoubleJump && !usedDoubleJump)
+			else if (hasDoubleJump && !usedDoubleJump && !onWall)
 			{
 				usedDoubleJump = true;
 				rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
@@ -160,9 +160,11 @@ public class PlayerController : MonoBehaviour
 			}
 			else if(onWall && !isGrounded)
 			{
+				
 				animator.SetTrigger("jump");
 				audioSource.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.Length)]);
 				rb.AddForce(new Vector2(horizontalJumpForce * -direction, jumpForce), ForceMode2D.Impulse);
+				usedDoubleJump = false;
 				Invoke("ResetOnWall", wallJumpTime);
 			}
 			

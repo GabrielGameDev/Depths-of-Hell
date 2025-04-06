@@ -22,6 +22,7 @@ public class PlatformSpawner : MonoBehaviour
     public static PlatformSpawner instance;
 	public GameObject levelTrigger, nextlevelNotification;
 	public Mover lava;
+	public Renderer backgroundScroller;
 	public float lavaIncreaseSpeed;
 	public TMP_Text levelText;
 	public TMP_Text announcementText;
@@ -75,6 +76,9 @@ public class PlatformSpawner : MonoBehaviour
 		}
 		index++;
 		lava.moveSpeed *= lavaIncreaseSpeed;
+		Vector2 scrollDirection = backgroundScroller.material.GetVector("_ScrollDirection");
+		scrollDirection.y *= lavaIncreaseSpeed;
+		backgroundScroller.material.SetVector("_ScrollDirection", scrollDirection);
 	}
 
 	public async void UpdateLevelText()
