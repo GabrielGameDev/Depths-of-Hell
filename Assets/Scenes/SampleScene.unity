@@ -611,6 +611,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!1 &382203627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1156817783363663247, guid: 807ea80ecd5832642aeac0f4f06e656c, type: 3}
+  m_PrefabInstance: {fileID: 6350913940784982799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &385978926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,8 +1950,8 @@ MonoBehaviour:
   lava: {fileID: 633632162}
   lavaIncreaseSpeed: 1.09
   levelText: {fileID: 184981089}
-  announcementText: {fileID: 0}
-  announcementPanel: {fileID: 0}
+  announcementText: {fileID: 1823358532}
+  announcementPanel: {fileID: 382203627}
   platformSettings:
   - platformPrefab:
     - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
@@ -1956,7 +1961,7 @@ MonoBehaviour:
     height: {x: 2, y: 4}
     numberOfPlatforms: 20
     levelSound: {fileID: 8300000, guid: 006e0eef0aece6f45918517e9cbc30f6, type: 3}
-    announcementText: 
+    announcementText: You'll never escape from hell
     OnStartLevel:
       m_PersistentCalls:
         m_Calls:
@@ -1982,7 +1987,7 @@ MonoBehaviour:
     height: {x: 2, y: 4}
     numberOfPlatforms: 20
     levelSound: {fileID: 8300000, guid: 3fc4110d071638347809809acd33c86e, type: 3}
-    announcementText: 
+    announcementText: Spikes
     OnStartLevel:
       m_PersistentCalls:
         m_Calls: []
@@ -1995,7 +2000,7 @@ MonoBehaviour:
     height: {x: 2, y: 4}
     numberOfPlatforms: 20
     levelSound: {fileID: 8300000, guid: 9b5fdc88f1de15c4783af2e4f938f0f9, type: 3}
-    announcementText: 
+    announcementText: Demons get him
     OnStartLevel:
       m_PersistentCalls:
         m_Calls: []
@@ -2007,7 +2012,7 @@ MonoBehaviour:
     height: {x: 3, y: 5}
     numberOfPlatforms: 20
     levelSound: {fileID: 8300000, guid: e2682c4611fe5914eb06c03766e9d65a, type: 3}
-    announcementText: 
+    announcementText: Double Jump
     OnStartLevel:
       m_PersistentCalls:
         m_Calls:
@@ -2031,7 +2036,7 @@ MonoBehaviour:
     height: {x: 3, y: 5}
     numberOfPlatforms: 20
     levelSound: {fileID: 8300000, guid: 3d42a1a140833564c87cee286f08d823, type: 3}
-    announcementText: 
+    announcementText: Break these platforms
     OnStartLevel:
       m_PersistentCalls:
         m_Calls: []
@@ -2045,7 +2050,7 @@ MonoBehaviour:
     height: {x: 3, y: 6}
     numberOfPlatforms: 20
     levelSound: {fileID: 8300000, guid: 5f389069619ec0c40822a1b6436f8c63, type: 3}
-    announcementText: 
+    announcementText: Fireball
     OnStartLevel:
       m_PersistentCalls:
         m_Calls: []
@@ -2057,7 +2062,7 @@ MonoBehaviour:
     height: {x: 11, y: 11}
     numberOfPlatforms: 5
     levelSound: {fileID: 8300000, guid: 15bf043f482f70449980c81981b9f964, type: 3}
-    announcementText: 
+    announcementText: Wall jump
     OnStartLevel:
       m_PersistentCalls:
         m_Calls: []
@@ -2069,7 +2074,7 @@ MonoBehaviour:
     height: {x: 11, y: 11}
     numberOfPlatforms: 5
     levelSound: {fileID: 8300000, guid: 36465904ab747b549a8a8dac14fbbc42, type: 3}
-    announcementText: 
+    announcementText: Dash
     OnStartLevel:
       m_PersistentCalls:
         m_Calls:
@@ -3409,6 +3414,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9ce50b98627b3d4f979c694fed55da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1823358532 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1904611787402352682, guid: 807ea80ecd5832642aeac0f4f06e656c, type: 3}
+  m_PrefabInstance: {fileID: 6350913940784982799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1864585442

@@ -80,12 +80,12 @@ public class PlatformSpawner : MonoBehaviour
 	public async void UpdateLevelText()
 	{
 		platformSettings[index - 1].OnStartLevel.Invoke();		
-		levelText.text = "DEPTH " + index;
+		levelText.text = "DEPTH " + (platformSettings.Length - index);
 		announcementPanel.SetActive(true);
 		announcementText.text = platformSettings[index - 1].announcementText;
 		await Awaitable.WaitForSecondsAsync(0.5f);
 		audioSource.PlayOneShot(platformSettings[index - 1].levelSound);
-		await Awaitable.WaitForSecondsAsync(2f);
+		await Awaitable.WaitForSecondsAsync(3.5f);
 		announcementPanel.SetActive(false);
 	}
 
