@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ public class LevelManager : MonoBehaviour
 	public Mover cineCam;
 	public Mover lava;
 	public PlayerController playerController;
+	public TMP_Text deathCountText;
+	int deathCount = 0;
 
 	private void Awake()
 	{
@@ -20,12 +23,18 @@ public class LevelManager : MonoBehaviour
 		SceneManager.LoadScene(buildIndex);
 	}
 
-	public async void GameOver()
+	public async void GameOver(bool reload)
 	{
-		cineCam.enabled = false;
-		lava.enabled = true;
-		await Awaitable.WaitForSecondsAsync(3.25f);
-		LoadLevel(0);
+		deathCount++;
+		deathCountText.text = "X " + deathCount;
+		//cineCam.enabled = false;
+		//lava.enabled = true;
+		if (reload)
+		{
+			await Awaitable.WaitForSecondsAsync(3.25f);
+			LoadLevel(0);
+		}
+		
 	}
 
 	public async void PlayMusic(float delay)

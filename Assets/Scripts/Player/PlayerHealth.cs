@@ -8,10 +8,10 @@ public class PlayerHealth : MonoBehaviour
 		Damager damager = collision.GetComponent<Damager>();
 		if (damager != null)
 		{
-			deathFx.transform.position = transform.position;
-			deathFx.SetActive(true);			
-			LevelManager.instance.GameOver();
-			gameObject.SetActive(false);
+			GameObject newDeathFx = Instantiate(deathFx, transform.position, Quaternion.identity);
+			newDeathFx.SetActive(true);			
+			LevelManager.instance.GameOver(damager.reload);
+			
 		}
 		
 	}

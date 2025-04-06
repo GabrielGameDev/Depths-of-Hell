@@ -32,6 +32,8 @@ public class PlatformSpawner : MonoBehaviour
 	AudioSource audioSource;
 	public UnityEvent OnFinish;
 
+	public float LavaIncreaseSpeed { get => lavaIncreaseSpeed; set => lavaIncreaseSpeed = value; }
+
 	private void Awake()
 	{		
 		audioSource = GetComponent<AudioSource>();
