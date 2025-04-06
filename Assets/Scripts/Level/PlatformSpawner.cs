@@ -5,21 +5,20 @@ using UnityEngine.Events;
 [System.Serializable]
 public class PlatformSettings
 {
+	public string announcementText;
 	public GameObject[] platformPrefab;
 	public GameObject[] enemyPrefab;
 	public float spawnEnemyChance;
 	public Vector2 spawnPosition;
 	public Vector2 height;
 	public int numberOfPlatforms;
-	public AudioClip levelSound;
-	public string announcementText;
+	public AudioClip levelSound;	
 	public UnityEvent OnStartLevel;
 	
 }
 
 public class PlatformSpawner : MonoBehaviour
 {
-    public static PlatformSpawner instance;
 	public GameObject levelTrigger, nextlevelNotification;
 	public Mover lava;
 	public Renderer backgroundScroller;
@@ -34,8 +33,7 @@ public class PlatformSpawner : MonoBehaviour
 	public UnityEvent OnFinish;
 
 	private void Awake()
-	{
-		instance = this;
+	{		
 		audioSource = GetComponent<AudioSource>();
 	}
 
