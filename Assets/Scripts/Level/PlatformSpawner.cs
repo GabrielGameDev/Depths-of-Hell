@@ -31,6 +31,7 @@ public class PlatformSpawner : MonoBehaviour
 	Vector2 lastPlatformPosition;
     int index;
 	AudioSource audioSource;
+	public UnityEvent OnFinish;
 
 	private void Awake()
 	{
@@ -70,6 +71,11 @@ public class PlatformSpawner : MonoBehaviour
 
     public void NextLevel()
     {
+		if (index >= platformSettings.Length)
+		{
+			OnFinish.Invoke();
+			return;
+		}
 		for (int i = 0; i < platformSettings[index].numberOfPlatforms; i++)
 		{
 			SpawnPlatform(i);

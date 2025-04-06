@@ -362,6 +362,340 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3124052958173424822, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
   m_PrefabInstance: {fileID: 7183458760268877285}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &253613340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 253613343}
+  - component: {fileID: 253613342}
+  - component: {fileID: 253613341}
+  m_Layer: 0
+  m_Name: Platform Spawner Boss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &253613341
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253613340}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &253613342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253613340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d3910d8d8233d4caef884f83879e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelTrigger: {fileID: 8226293869547899951, guid: 7d58b09919dca024cbd3bcc98ec6a11e, type: 3}
+  nextlevelNotification: {fileID: 1824397219797277952, guid: 4c6ecc69920febc4e85a9cbacab8a53d, type: 3}
+  lava: {fileID: 633632162}
+  backgroundScroller: {fileID: 1321680981}
+  lavaIncreaseSpeed: 1.09
+  levelText: {fileID: 184981089}
+  announcementText: {fileID: 1823358532}
+  announcementPanel: {fileID: 382203627}
+  platformSettings:
+  - platformPrefab:
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    enemyPrefab: []
+    spawnEnemyChance: 0
+    spawnPosition: {x: -4, y: 4}
+    height: {x: 2, y: 4}
+    numberOfPlatforms: 20
+    levelSound: {fileID: 8300000, guid: 006e0eef0aece6f45918517e9cbc30f6, type: 3}
+    announcementText: You'll never escape from hell
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1170316407}
+          m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+          m_MethodName: PlayMusic
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 2
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - platformPrefab:
+    - {fileID: 701022111598437162, guid: c52da6e91d007dd479312c9aff8fb353, type: 3}
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    enemyPrefab: []
+    spawnEnemyChance: 0.5
+    spawnPosition: {x: -6, y: 8}
+    height: {x: 3, y: 6}
+    numberOfPlatforms: 20
+    levelSound: {fileID: 8300000, guid: 5f389069619ec0c40822a1b6436f8c63, type: 3}
+    announcementText: Fireball
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - platformPrefab:
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    - {fileID: 4984320992431730783, guid: 219077f1b375e7e47bf9524abb449d67, type: 3}
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    enemyPrefab: []
+    spawnEnemyChance: 0
+    spawnPosition: {x: -5, y: 5}
+    height: {x: 2, y: 4}
+    numberOfPlatforms: 20
+    levelSound: {fileID: 8300000, guid: 3fc4110d071638347809809acd33c86e, type: 3}
+    announcementText: Spikes
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls: []
+  - platformPrefab:
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    enemyPrefab:
+    - {fileID: 3150985223825127243, guid: 09fafe66bc1dc2442848684536ef992f, type: 3}
+    spawnEnemyChance: 0.5
+    spawnPosition: {x: -4, y: 4}
+    height: {x: 2, y: 4}
+    numberOfPlatforms: 20
+    levelSound: {fileID: 8300000, guid: 9b5fdc88f1de15c4783af2e4f938f0f9, type: 3}
+    announcementText: Demons get him
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls: []
+  - platformPrefab:
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    enemyPrefab: []
+    spawnEnemyChance: 0
+    spawnPosition: {x: -6, y: 6}
+    height: {x: 3, y: 5}
+    numberOfPlatforms: 20
+    levelSound: {fileID: 8300000, guid: e2682c4611fe5914eb06c03766e9d65a, type: 3}
+    announcementText: Double Jump
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1864585447}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: set_HasDoubleJump
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - platformPrefab:
+    - {fileID: 701022111598437162, guid: c52da6e91d007dd479312c9aff8fb353, type: 3}
+    enemyPrefab: []
+    spawnEnemyChance: 0
+    spawnPosition: {x: -6, y: 6}
+    height: {x: 3, y: 5}
+    numberOfPlatforms: 20
+    levelSound: {fileID: 8300000, guid: 3d42a1a140833564c87cee286f08d823, type: 3}
+    announcementText: Break these platforms
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls: []
+  - platformPrefab:
+    - {fileID: 701022111598437162, guid: c52da6e91d007dd479312c9aff8fb353, type: 3}
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    enemyPrefab:
+    - {fileID: 2000813775767147505, guid: e9821a171835ee148a685b06b1ce46b2, type: 3}
+    spawnEnemyChance: 0.5
+    spawnPosition: {x: -6, y: 8}
+    height: {x: 3, y: 6}
+    numberOfPlatforms: 20
+    levelSound: {fileID: 8300000, guid: 5f389069619ec0c40822a1b6436f8c63, type: 3}
+    announcementText: Fireball
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls: []
+  - platformPrefab:
+    - {fileID: 8078006978137633311, guid: ab02991d8c4fa0044900d43293692a13, type: 3}
+    enemyPrefab: []
+    spawnEnemyChance: 0
+    spawnPosition: {x: 0, y: 0}
+    height: {x: 11, y: 11}
+    numberOfPlatforms: 5
+    levelSound: {fileID: 8300000, guid: 15bf043f482f70449980c81981b9f964, type: 3}
+    announcementText: Wall jump
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls: []
+  - platformPrefab:
+    - {fileID: 1120074179362118801, guid: c2f12a9cd5053a8499666d0014d336ae, type: 3}
+    enemyPrefab: []
+    spawnEnemyChance: 0
+    spawnPosition: {x: 0, y: 0}
+    height: {x: 11, y: 11}
+    numberOfPlatforms: 5
+    levelSound: {fileID: 8300000, guid: 36465904ab747b549a8a8dac14fbbc42, type: 3}
+    announcementText: Dash
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1864585447}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: set_HasDash
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - platformPrefab:
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    - {fileID: 4984320992431730783, guid: 219077f1b375e7e47bf9524abb449d67, type: 3}
+    - {fileID: 701022111598437162, guid: c52da6e91d007dd479312c9aff8fb353, type: 3}
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    - {fileID: 4009168730506564401, guid: 87471c32d5345394085f0365b157259c, type: 3}
+    enemyPrefab:
+    - {fileID: 2000813775767147505, guid: e9821a171835ee148a685b06b1ce46b2, type: 3}
+    - {fileID: 3150985223825127243, guid: 09fafe66bc1dc2442848684536ef992f, type: 3}
+    spawnEnemyChance: 0.5
+    spawnPosition: {x: -7.5, y: 7.5}
+    height: {x: 4, y: 7}
+    numberOfPlatforms: 22
+    levelSound: {fileID: 8300000, guid: 36465904ab747b549a8a8dac14fbbc42, type: 3}
+    announcementText: Dash
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls: []
+  OnFinish:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &253613343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253613340}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &293426013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,23 +2962,6 @@ MonoBehaviour:
   - platformPrefab:
     - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
     - {fileID: 4984320992431730783, guid: 219077f1b375e7e47bf9524abb449d67, type: 3}
-    - {fileID: 701022111598437162, guid: c52da6e91d007dd479312c9aff8fb353, type: 3}
-    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
-    enemyPrefab:
-    - {fileID: 2000813775767147505, guid: e9821a171835ee148a685b06b1ce46b2, type: 3}
-    - {fileID: 3150985223825127243, guid: 09fafe66bc1dc2442848684536ef992f, type: 3}
-    spawnEnemyChance: 0.5
-    spawnPosition: {x: -7.5, y: 7.5}
-    height: {x: 4, y: 7}
-    numberOfPlatforms: 20
-    levelSound: {fileID: 8300000, guid: 36465904ab747b549a8a8dac14fbbc42, type: 3}
-    announcementText: Dash
-    OnStartLevel:
-      m_PersistentCalls:
-        m_Calls: []
-  - platformPrefab:
-    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
-    - {fileID: 4984320992431730783, guid: 219077f1b375e7e47bf9524abb449d67, type: 3}
     - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
     enemyPrefab: []
     spawnEnemyChance: 0
@@ -2755,6 +3072,39 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+  - platformPrefab:
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    - {fileID: 4984320992431730783, guid: 219077f1b375e7e47bf9524abb449d67, type: 3}
+    - {fileID: 701022111598437162, guid: c52da6e91d007dd479312c9aff8fb353, type: 3}
+    - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
+    - {fileID: 4009168730506564401, guid: 87471c32d5345394085f0365b157259c, type: 3}
+    enemyPrefab:
+    - {fileID: 2000813775767147505, guid: e9821a171835ee148a685b06b1ce46b2, type: 3}
+    - {fileID: 3150985223825127243, guid: 09fafe66bc1dc2442848684536ef992f, type: 3}
+    spawnEnemyChance: 0.5
+    spawnPosition: {x: -7.5, y: 7.5}
+    height: {x: 4, y: 7}
+    numberOfPlatforms: 22
+    levelSound: {fileID: 8300000, guid: 36465904ab747b549a8a8dac14fbbc42, type: 3}
+    announcementText: Dash
+    OnStartLevel:
+      m_PersistentCalls:
+        m_Calls: []
+  OnFinish:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 253613340}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!4 &1361447274
 Transform:
   m_ObjectHideFlags: 0
@@ -4227,8 +4577,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8acfa0a050961474794238b3a17e0b6a, type: 3}
   - {fileID: 8300000, guid: 83d1c362045afc742bd613f0b828f9a7, type: 3}
   screenLimit: {x: -10, y: 10}
-  hasDoubleJump: 1
-  hasDash: 1
+  hasDoubleJump: 0
+  hasDash: 0
   dashForce: 18
   dashDuration: 0.25
   jumpPressed: 0
@@ -4989,6 +5339,7 @@ SceneRoots:
   - {fileID: 633632161}
   - {fileID: 1962645644}
   - {fileID: 1361447274}
+  - {fileID: 253613343}
   - {fileID: 6350913940784982799}
   - {fileID: 1160930837}
   - {fileID: 1170316408}
