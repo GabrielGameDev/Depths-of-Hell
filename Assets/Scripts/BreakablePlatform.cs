@@ -3,14 +3,24 @@ using UnityEngine;
 public class BreakablePlatform : MonoBehaviour
 {
 	public float destroyDelay = 0.5f; // Delay before the platform is destroyed
-	private void OnCollisionEnter2D(Collision2D collision)
+	public Animator animator; // Reference to the Animator component
+
+	
+
+
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
-        if (collision.gameObject.CompareTag("Player"))
-		{			
-			if(collision.transform.position.y > transform.position.y)
-			{
-				Destroy(gameObject, destroyDelay);
+		if (collision.gameObject.CompareTag("Player"))
+		{
+			Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (playerRb.linearVelocity.y <= 0)
+            {
+				GetComponent<Collider2D>().enabled = false; // Disable the collider to prevent further collisions
+				animator.enabled = true; // Enable the animator to play the animation
+				Destroy(transform.parent.gameObject, destroyDelay); // Destroy the platform after the delay
 			}
+            
 		}
-    }
+	}
+
 }

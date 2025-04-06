@@ -60,7 +60,8 @@ public class PlayerController : MonoBehaviour
         // Check if the player is grounded
         RaycastHit2D rightCheck = Raycast(new Vector2(footOffset, 0), Vector2.down, groundCheckDistance, groundLayer);
         RaycastHit2D leftCheck = Raycast(new Vector2(-footOffset, 0), Vector2.down, groundCheckDistance, groundLayer);
-        isGrounded = rightCheck || leftCheck;
+        
+		isGrounded = rightCheck || leftCheck;
         
 		trailEffet.SetActive(isGrounded);
 
