@@ -56,9 +56,9 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _UseWooble: 1
-    - _WaveStrenght: 0.5
+    - _WaveStrenght: 0.44
     - _WaveStrenghtSpeed: 2.98
-    - _WoobleX: -0.12
+    - _WoobleX: -0.13
     - _WoobleY: 0
     - _WoobleZ: 0
     - _waveSpeed: 1.5
