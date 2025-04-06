@@ -12,6 +12,7 @@ public class PlatformSettings
 	public Vector2 height;
 	public int numberOfPlatforms;
 	public AudioClip levelSound;
+	public string announcementText;
 	public UnityEvent OnStartLevel;
 	
 }
@@ -23,6 +24,8 @@ public class PlatformSpawner : MonoBehaviour
 	public Mover lava;
 	public float lavaIncreaseSpeed;
 	public TMP_Text levelText;
+	public TMP_Text announcementText;
+	public GameObject announcementPanel;
     public PlatformSettings[] platformSettings;
 	Vector2 lastPlatformPosition;
     int index;
@@ -78,13 +81,15 @@ public class PlatformSpawner : MonoBehaviour
 	{
 		platformSettings[index - 1].OnStartLevel.Invoke();		
 		levelText.text = "DEPTH " + index;
-		Invoke("DisableText", 3f);
+		announcementPanel.SetActive(true);
+		announcementText.text = platformSettings[index - 1].announcementText;
 		await Awaitable.WaitForSecondsAsync(0.5f);
 		audioSource.PlayOneShot(platformSettings[index - 1].levelSound);
+		await Awaitable.WaitForSecondsAsync(2f);
+		announcementPanel.SetActive(false);
 	}
 
-	private void DisableText()
-	{
-		levelText.text = "";
-	}
+
+
+	
 }

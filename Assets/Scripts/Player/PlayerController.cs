@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+	[Header("Movement")]
     public float speed = 5f; 
 	public float stoppingSpeed = 5f;
     public float jumpForce = 5f; 
@@ -14,8 +15,12 @@ public class PlayerController : MonoBehaviour
     public Vector2 screenLimit;
 	private Rigidbody2D rb; 
     private bool isGrounded;
-	public bool hasDoubleJump;
+
+	[Header("Skills")]
+	private bool hasDoubleJump;
 	private bool hasDash;
+
+	[Header("Dash")]
 	public float dashForce = 10;            	
 	public float dashDuration = 0.25f;
 	bool isDashing;
@@ -36,6 +41,7 @@ public class PlayerController : MonoBehaviour
 	int direction = 1; // 1 for right, -1 for left
 	Animator animator;
 
+	public GameObject trailEffet;
 
 	public bool HasDoubleJump { get => hasDoubleJump; set => hasDoubleJump = value; }
 	public bool HasDash { get => hasDash; set => hasDash = value; }
@@ -56,6 +62,8 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D leftCheck = Raycast(new Vector2(-footOffset, 0), Vector2.down, groundCheckDistance, groundLayer);
         isGrounded = rightCheck || leftCheck;
         
+		trailEffet.SetActive(isGrounded);
+
 		if((isGrounded || onWall) && Time.time > dashTime)
 			canDash = true;
     
