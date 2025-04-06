@@ -17,8 +17,8 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
 	[Header("Skills")]
-	private bool hasDoubleJump;
-	private bool hasDash;
+	public bool hasDoubleJump;
+	public bool hasDash;
 
 	[Header("Dash")]
 	public float dashForce = 10;            	
@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
         
 		isGrounded = rightCheck || leftCheck;
         
+		animator.SetBool("ground", isGrounded); 
+
 		trailEffet.SetActive(isGrounded);
 
 		if((isGrounded || onWall) && Time.time > dashTime)

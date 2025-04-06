@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 	public AudioSource music;
 	public Mover cineCam;
+	public Mover lava;
 	public PlayerController playerController;
 
 	private void Awake()
@@ -17,6 +18,14 @@ public class LevelManager : MonoBehaviour
 	public void LoadLevel(int buildIndex)
 	{
 		SceneManager.LoadScene(buildIndex);
+	}
+
+	public async void GameOver()
+	{
+		cineCam.enabled = false;
+		lava.enabled = true;
+		await Awaitable.WaitForSecondsAsync(3.25f);
+		LoadLevel(0);
 	}
 
 	public async void PlayMusic(float delay)
