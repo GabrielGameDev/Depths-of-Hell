@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 screenLimit;
 	private Rigidbody2D rb; 
     private bool isGrounded;
-	private bool hasDoubleJump;
+	public bool hasDoubleJump;
 	private bool hasDash;
 	public float dashForce = 10;            	
 	public float dashDuration = 0.25f;
@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if(ctx.performed)
 		{
-			if (canDash)
+			if (canDash && hasDash)
 			{
 				isDashing = true;
 				dashTime = Time.time + dashDuration;

@@ -2018,7 +2018,7 @@ MonoBehaviour:
   levelTrigger: {fileID: 8226293869547899951, guid: 7d58b09919dca024cbd3bcc98ec6a11e, type: 3}
   nextlevelNotification: {fileID: 1824397219797277952, guid: 4c6ecc69920febc4e85a9cbacab8a53d, type: 3}
   lava: {fileID: 633632162}
-  lavaIncreaseSpeed: 1.1
+  lavaIncreaseSpeed: 1.09
   levelText: {fileID: 667105446}
   platformSettings:
   - platformPrefab:
@@ -2109,8 +2109,8 @@ MonoBehaviour:
     enemyPrefab: []
     spawnEnemyChance: 0
     spawnPosition: {x: 0, y: 0}
-    height: {x: 12, y: 12}
-    numberOfPlatforms: 10
+    height: {x: 11, y: 11}
+    numberOfPlatforms: 5
     levelSound: {fileID: 8300000, guid: 15bf043f482f70449980c81981b9f964, type: 3}
     OnStartLevel:
       m_PersistentCalls:
@@ -2120,8 +2120,8 @@ MonoBehaviour:
     enemyPrefab: []
     spawnEnemyChance: 0
     spawnPosition: {x: 0, y: 0}
-    height: {x: 12, y: 12}
-    numberOfPlatforms: 10
+    height: {x: 11, y: 11}
+    numberOfPlatforms: 5
     levelSound: {fileID: 8300000, guid: 36465904ab747b549a8a8dac14fbbc42, type: 3}
     OnStartLevel:
       m_PersistentCalls:
@@ -3515,7 +3515,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8acfa0a050961474794238b3a17e0b6a, type: 3}
   - {fileID: 8300000, guid: 83d1c362045afc742bd613f0b828f9a7, type: 3}
   screenLimit: {x: -10.5, y: 10.5}
-  dashForce: 15
+  hasDoubleJump: 0
+  dashForce: 18
   dashDuration: 0.25
   jumpPressed: 0
   onWall: 0
