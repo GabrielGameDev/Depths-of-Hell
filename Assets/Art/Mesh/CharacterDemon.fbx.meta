@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Character_Eye_mat
+    second: {fileID: 2100000, guid: cccb2598b0a07d340848a89271e59b80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: DevilCaracter_mat
     second: {fileID: 2100000, guid: caa3e6bc145be654491075338f6da8ba, type: 2}
   - first:
