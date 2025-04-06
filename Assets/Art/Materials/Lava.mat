@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5446940016456201363
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Lava
-  m_Shader: {fileID: -6465566751694194690, guid: 98e45e3638b549b4a972c8b0e29b7732, type: 3}
+  m_Name: LAva
+  m_Shader: {fileID: -6465566751694194690, guid: 46603b4adb6d9504797c35292c2b4ebe, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,10 +37,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_df814fb1718447f4b430f7939cffe52f:
-        m_Texture: {fileID: 2800000, guid: e76fced8fcfe1114697f10fcfe1d87e0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -42,30 +51,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_30c2129fc1b14cacae4c5402852fa917: 0
-    - Vector1_7f26fb54a3f1446cae706364d1d4c87b: 0.1
-    - Vector1_96f9a553b5284eca81b8c2e93d4b3cef: 1
-    - Vector1_ab5bbc78aace46cca47c976624c57654: 0.01
-    - Vector1_ca96e47f336c4f3e94f6e18dd5768814: 0
-    - Vector1_ddb6293edce643b0ad001ef8e4bfe970: 0
-    - Vector1_f64f7fc51f514d1fa0c302cd1c54ace5: 0
+    - _FillAmount: 1
+    - _FresnelPower: 1.16
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _UseWooble: 1
+    - _WaveStrenght: 0.5
+    - _WaveStrenghtSpeed: 2.98
+    - _WoobleX: -0.12
+    - _WoobleY: 0
+    - _WoobleZ: 0
+    - _waveSpeed: 1.5
     m_Colors:
-    - _EmissionColor: {r: 0.7924528, g: 0.22018474, b: 0, a: 1}
-    - _LavaColor: {r: 0.8301887, g: 0, b: 0, a: 1}
+    - _FresnelColor: {r: 4.030381, g: 0.9756312, b: 0, a: 1}
+    - _LiquidColor: {r: 1, g: 0.009132421, b: 0, a: 1}
+    - _SurfaceColor: {r: 4, g: 1.1019892, b: 0.62264156, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8467257566263874205
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 9
