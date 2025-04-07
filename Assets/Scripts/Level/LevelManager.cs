@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
 	public PlayerController playerController;
 	public TMP_Text deathCountText;
 	int deathCount = 0;
+	public static bool hardcoreMode = false;
 
 	private void Awake()
 	{
@@ -27,10 +28,11 @@ public class LevelManager : MonoBehaviour
 	{
 		deathCount++;
 		deathCountText.text = "X " + deathCount;
-		//cineCam.enabled = false;
-		//lava.enabled = true;
+		
 		if (reload)
-		{
+		{	
+			cineCam.enabled = false;
+			lava.enabled = true;
 			await Awaitable.WaitForSecondsAsync(3.25f);
 			LoadLevel(0);
 		}

@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class Damager : MonoBehaviour
 {
-	public bool reload;
+	public bool isLava = false;
 }

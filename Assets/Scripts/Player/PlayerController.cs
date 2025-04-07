@@ -213,5 +213,12 @@ public class PlayerController : MonoBehaviour
 		return hit;
 	}
 
+	public void DisableMovement()
+	{
+		rb.linearVelocity = Vector2.zero;
+		rb.angularVelocity = 0f;
+
+	}
 	
+
 }
