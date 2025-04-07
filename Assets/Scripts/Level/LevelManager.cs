@@ -1,5 +1,7 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 
@@ -13,6 +15,7 @@ public class LevelManager : MonoBehaviour
 	public TMP_Text deathCountText;
 	int deathCount = 0;
 	public static bool hardcoreMode = false;
+	public Volume finishGameVolume;
 
 	private void Awake()
 	{
@@ -47,5 +50,33 @@ public class LevelManager : MonoBehaviour
 		await Awaitable.WaitForSecondsAsync(delay/2);
 		cineCam.enabled = true;
 		
+	}
+
+	public void FInishGame()
+	{
+		StartCoroutine(BlendingVolume());
+	}
+
+	IEnumerator BlendingVolume()
+	{
+		float value = 0;
+		while (value < 1)
+		{
+			value += Time.deltaTime;
+			finishGameVolume.weight = value;
+			music.volume = Mathf.Lerp(music.volume, 0, value);
+			yield return null;
+		}
+
+		yield return new WaitForSeconds(1f);
+		if(hardcoreMode)
+		{
+			SceneManager.LoadScene(2);
+		}
+		else
+		{
+			SceneManager.LoadScene(3);
+		}
+
 	}
 }

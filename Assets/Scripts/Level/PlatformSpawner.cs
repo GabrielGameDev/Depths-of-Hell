@@ -89,6 +89,10 @@ public class PlatformSpawner : MonoBehaviour
 
 	public async void UpdateLevelText()
 	{
+		if (index >= platformSettings.Length)
+		{
+			return;
+		}
 		platformSettings[index - 1].OnStartLevel.Invoke();		
 		levelText.text = "DEPTH " + (platformSettings.Length - index);
 		announcementPanel.SetActive(true);

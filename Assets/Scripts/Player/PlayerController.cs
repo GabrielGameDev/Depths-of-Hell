@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
 	AudioSource audioSource;
 	float targetVelocityX = 0f;
 	public bool jumpPressed;
+	public ParticleSystem dashFx;
 
 	[Header("Wall")]
 	public bool onWall;	
@@ -121,6 +122,7 @@ public class PlayerController : MonoBehaviour
 		{
 			if (canDash && hasDash)
 			{
+				dashFx.Play();
 				isDashing = true;
 				dashTime = Time.time + dashDuration;
 				canDash = false;
