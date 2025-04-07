@@ -790,7 +790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ce50b98627b3d4f979c694fed55da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reload: 1
+  isLava: 1
 --- !u!61 &368946802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1209,6 +1209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 633632161}
   - component: {fileID: 633632160}
+  - component: {fileID: 633632165}
   - component: {fileID: 633632162}
   - component: {fileID: 633632163}
   - component: {fileID: 633632164}
@@ -1363,6 +1364,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &633632165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633632158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ApplyAfter: 2
+  ChannelMask: 1
+  Gain: 1
+  Use2DDistance: 0
+  UseCameraSpace: 1
+  ReactionSettings:
+    m_SecondaryNoise: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1001 &641272849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5136,7 +5160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ce50b98627b3d4f979c694fed55da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reload: 0
+  isLava: 0
 --- !u!114 &1823358532 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1904611787402352682, guid: 807ea80ecd5832642aeac0f4f06e656c, type: 3}
@@ -5339,6 +5363,7 @@ GameObject:
   - component: {fileID: 1864585450}
   - component: {fileID: 1864585451}
   - component: {fileID: 1864585452}
+  - component: {fileID: 1864585453}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5540,6 +5565,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathFx: {fileID: 820615577}
+  freezeDuration: 0.1
+  returnToNormalTime: 0.5
+  minTimeScale: 0.1
 --- !u!82 &1864585451
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5767,6 +5795,59 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1864585453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864585442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImpulseDefinition:
+    ImpulseChannel: 1
+    ImpulseShape: 4
+    CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    ImpulseDuration: 0.2
+    ImpulseType: 0
+    DissipationRate: 0.25
+    RawSignal: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    RepeatMode: 0
+    Randomize: 1
+    TimeEnvelope:
+      AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      AttackTime: 0
+      SustainTime: 0.2
+      DecayTime: 0.7
+      ScaleWithImpact: 1
+      HoldForever: 0
+    ImpactRadius: 100
+    DirectionMode: 0
+    DissipationMode: 2
+    DissipationDistance: 100
+    PropagationSpeed: 343
+  DefaultVelocity: {x: 0.5, y: -1, z: 0}
 --- !u!1 &1962645643
 GameObject:
   m_ObjectHideFlags: 0
