@@ -48,7 +48,7 @@ public class Boss : MonoBehaviour
         if(!isMoving)
         {
 			
-			transform.Translate(transform.up * speed * Time.deltaTime, Space.Self);
+			transform.Translate(transform.up * speed * Time.deltaTime * 4, Space.Self);
 		}
         
 	}

@@ -1401,7 +1401,7 @@ MonoBehaviour:
   player: {fileID: 1864585446}
   firePoint: {fileID: 781133276}
   fireBall: {fileID: 4805341296258298813, guid: 53c0d1d36f70de445ad08301bb3a2cfa, type: 3}
-  fireRate: 4
+  fireRate: 3
   speed: 2
   isMoving: 1
   verticalMovement: 1
@@ -1718,7 +1718,7 @@ MonoBehaviour:
   player: {fileID: 1864585446}
   firePoint: {fileID: 1290157924}
   fireBall: {fileID: 4805341296258298813, guid: 53c0d1d36f70de445ad08301bb3a2cfa, type: 3}
-  fireRate: 4
+  fireRate: 3
   speed: 2
   isMoving: 1
   verticalMovement: 1
@@ -2315,7 +2315,7 @@ MonoBehaviour:
   player: {fileID: 1864585446}
   firePoint: {fileID: 1218190863}
   fireBall: {fileID: 4805341296258298813, guid: 53c0d1d36f70de445ad08301bb3a2cfa, type: 3}
-  fireRate: 4
+  fireRate: 3
   speed: 2
   isMoving: 1
   verticalMovement: 0
@@ -2462,7 +2462,7 @@ MonoBehaviour:
   player: {fileID: 1864585446}
   firePoint: {fileID: 1309300275}
   fireBall: {fileID: 4805341296258298813, guid: 53c0d1d36f70de445ad08301bb3a2cfa, type: 3}
-  fireRate: 4
+  fireRate: 3
   speed: 2
   isMoving: 1
   verticalMovement: 0
@@ -2825,7 +2825,7 @@ MonoBehaviour:
   player: {fileID: 1864585446}
   firePoint: {fileID: 901097993}
   fireBall: {fileID: 4805341296258298813, guid: 53c0d1d36f70de445ad08301bb3a2cfa, type: 3}
-  fireRate: 4
+  fireRate: 3
   speed: 2
   isMoving: 1
   verticalMovement: 1
@@ -5256,7 +5256,7 @@ MonoBehaviour:
   player: {fileID: 1864585446}
   firePoint: {fileID: 1643258802}
   fireBall: {fileID: 4805341296258298813, guid: 53c0d1d36f70de445ad08301bb3a2cfa, type: 3}
-  fireRate: 4
+  fireRate: 3
   speed: 2
   isMoving: 1
   verticalMovement: 0
@@ -6690,7 +6690,7 @@ MonoBehaviour:
   player: {fileID: 1864585446}
   firePoint: {fileID: 825137561}
   fireBall: {fileID: 4805341296258298813, guid: 53c0d1d36f70de445ad08301bb3a2cfa, type: 3}
-  fireRate: 4
+  fireRate: 3
   speed: 2
   isMoving: 1
   verticalMovement: 0
