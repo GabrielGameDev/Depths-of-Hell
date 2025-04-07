@@ -13,7 +13,9 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHABLEND_ON
+  - _ALPHATEST_ON
   - _CFXR_HDR_BOOST
+  - _CFXR_LIGHTING_WPOS_OFFSET
   - _CFXR_SINGLE_CHANNEL
   m_InvalidKeywords:
   - _
@@ -135,7 +137,7 @@ Material:
     - _SrcBlend: 5
     - _UVDistortionAdd: 0
     - _UVSec: 0
-    - _UseAlphaClip: 0
+    - _UseAlphaClip: 1
     - _UseBackLighting: 0
     - _UseDissolve: 0
     - _UseDissolveOffsetUV: 0
@@ -145,7 +147,7 @@ Material:
     - _UseFontColor: 0
     - _UseGradientMap: 0
     - _UseLighting: 0
-    - _UseLightingWorldPosOffset: 0
+    - _UseLightingWorldPosOffset: 1
     - _UseNormalMap: 0
     - _UseSP: 0
     - _UseSecondColor: 0
