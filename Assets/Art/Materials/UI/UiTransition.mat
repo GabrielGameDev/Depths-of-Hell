@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UiTransition
+  m_Shader: {fileID: -6465566751694194690, guid: 8dcbdbbf91d4c404889be135bb96d464, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: _VerticalAnimation
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _LogoTexture:
+        m_Texture: {fileID: 2800000, guid: a2634b37e49da6b429a4e78b5b6081e5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ScrollTexture:
+        m_Texture: {fileID: 2800000, guid: ff1b5ca8c2f63a540aa8328e895ba7e7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0.5
+    - _ColorMask: 15
+    - _FadeToBlack: 1
+    - _HalftoneController: -5
+    - _HalftoneFade: 3
+    - _HalftoneRotate: 0
+    - _HalftoneSides: 4
+    - _HalftoneSize: 18
+    - _Height: 2
+    - _HorizontalSpeed: 0
+    - _LogoRotate: 0
+    - _RotateGradient: 181
+    - _RotateScrollingTexture: 0
+    - _Sides: 32
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _TestOffset: 1
+    - _UIMaskSoftnessX: 1
+    - _UIMaskSoftnessY: 1
+    - _VerticalAnimation: 0
+    - _VerticalSpeed: 1
+    - _Width: 2
+    m_Colors:
+    - _BottomColor: {r: 0, g: 0.1764706, b: 0.41568628, a: 0}
+    - _ClipRect: {r: 0, g: 0, b: 0, a: 0}
+    - _LogoColor: {r: 1, g: 1, b: 1, a: 0}
+    - _LogoOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _LogoTilling: {r: 1.65, g: 1, b: 0, a: 0}
+    - _OffsetGradient: {r: 0, g: -2.2, b: 0, a: 0}
+    - _ScrollTextureColor: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
+    - _TillingScrollingTexture: {r: 4, g: 2.31, b: 0, a: 0}
+    - _TopColor: {r: 0, g: 0.30980393, b: 0.6509804, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
