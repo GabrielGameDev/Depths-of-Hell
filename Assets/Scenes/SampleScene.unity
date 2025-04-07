@@ -3339,7 +3339,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - announcementText: Everyone joins the party
+  - announcementText: Everyone!
     platformPrefab:
     - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
     - {fileID: 4984320992431730783, guid: 219077f1b375e7e47bf9524abb449d67, type: 3}
@@ -3348,11 +3348,11 @@ MonoBehaviour:
     - {fileID: 4009168730506564401, guid: 87471c32d5345394085f0365b157259c, type: 3}
     enemyPrefab:
     - {fileID: 3150985223825127243, guid: 09fafe66bc1dc2442848684536ef992f, type: 3}
-    spawnEnemyChance: 0.6
+    spawnEnemyChance: 0.75
     spawnPosition: {x: -7.5, y: 7.5}
     height: {x: 4, y: 7}
     numberOfPlatforms: 22
-    levelSound: {fileID: 8300000, guid: 36465904ab747b549a8a8dac14fbbc42, type: 3}
+    levelSound: {fileID: 8300000, guid: a07bcf9ded887c442af4267c9e69dfb3, type: 3}
     OnStartLevel:
       m_PersistentCalls:
         m_Calls: []
@@ -3457,7 +3457,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - announcementText: Double Jump
+  - announcementText: You are very anoying
     platformPrefab:
     - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
     enemyPrefab: []
@@ -3465,7 +3465,7 @@ MonoBehaviour:
     spawnPosition: {x: -6, y: 6}
     height: {x: 3, y: 5}
     numberOfPlatforms: 10
-    levelSound: {fileID: 8300000, guid: e2682c4611fe5914eb06c03766e9d65a, type: 3}
+    levelSound: {fileID: 8300000, guid: ae512df3d19aa594a96e5b9946976ba2, type: 3}
     OnStartLevel:
       m_PersistentCalls:
         m_Calls:
@@ -3507,7 +3507,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - announcementText: Break these platforms
+  - announcementText: Again! Break these platforms
     platformPrefab:
     - {fileID: 701022111598437162, guid: c52da6e91d007dd479312c9aff8fb353, type: 3}
     enemyPrefab: []
@@ -3515,7 +3515,7 @@ MonoBehaviour:
     spawnPosition: {x: -6, y: 6}
     height: {x: 3, y: 5}
     numberOfPlatforms: 10
-    levelSound: {fileID: 8300000, guid: 3d42a1a140833564c87cee286f08d823, type: 3}
+    levelSound: {fileID: 8300000, guid: 3a17745ee11b3a744b5475000d1cf519, type: 3}
     OnStartLevel:
       m_PersistentCalls:
         m_Calls:
@@ -3555,7 +3555,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - announcementText: Wall jump
+  - announcementText: For god's sake remove all platforms
     platformPrefab:
     - {fileID: 8078006978137633311, guid: ab02991d8c4fa0044900d43293692a13, type: 3}
     enemyPrefab: []
@@ -3579,7 +3579,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - announcementText: Dash
+  - announcementText: You'll never get to the other side
     platformPrefab:
     - {fileID: 1120074179362118801, guid: c2f12a9cd5053a8499666d0014d336ae, type: 3}
     enemyPrefab: []
@@ -3591,7 +3591,7 @@ MonoBehaviour:
     OnStartLevel:
       m_PersistentCalls:
         m_Calls: []
-  - announcementText: Fireball
+  - announcementText: You keep going, right?
     platformPrefab:
     - {fileID: 8078006978137633311, guid: ab02991d8c4fa0044900d43293692a13, type: 3}
     enemyPrefab: []
@@ -3599,11 +3599,11 @@ MonoBehaviour:
     spawnPosition: {x: 0, y: 0}
     height: {x: 11, y: 11}
     numberOfPlatforms: 3
-    levelSound: {fileID: 8300000, guid: 5f389069619ec0c40822a1b6436f8c63, type: 3}
+    levelSound: {fileID: 8300000, guid: 11a89dc2ae8a39c4c84ba493ed835593, type: 3}
     OnStartLevel:
       m_PersistentCalls:
         m_Calls: []
-  - announcementText: Final
+  - announcementText: This is your final warning!
     platformPrefab:
     - {fileID: 718494961324194898, guid: 9d5a6fe638c3ff74c8a530488657b71c, type: 3}
     - {fileID: 4984320992431730783, guid: 219077f1b375e7e47bf9524abb449d67, type: 3}
@@ -4484,10 +4484,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3673d9952c2479343a699cb178783e02, type: 3}
-  m_Resource: {fileID: 8300000, guid: 3673d9952c2479343a699cb178783e02, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4e59b2dd644bd3e44849664d1da3c4ce, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4e59b2dd644bd3e44849664d1da3c4ce, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
