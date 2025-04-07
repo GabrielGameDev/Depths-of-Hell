@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
 	int deathCount = 0;
 	public static bool hardcoreMode = false;
 	public Volume finishGameVolume;
-
+	public bool isGameOver = false;
 	private void Awake()
 	{
 		instance = this;
@@ -54,6 +54,9 @@ public class LevelManager : MonoBehaviour
 
 	public void FInishGame()
 	{
+		if (isGameOver)
+			return;
+		isGameOver = true;
 		StartCoroutine(BlendingVolume());
 	}
 
@@ -62,7 +65,7 @@ public class LevelManager : MonoBehaviour
 		float value = 0;
 		while (value < 1)
 		{
-			value += Time.deltaTime;
+			value += Time.deltaTime / 2;
 			finishGameVolume.weight = value;
 			music.volume = Mathf.Lerp(music.volume, 0, value);
 			yield return null;

@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		if(LevelManager.instance.isGameOver) return; // Evita múltiplas ativações
 		if(isDead) return; // Evita múltiplas ativações
 		Damager damager = collision.GetComponent<Damager>();
 		if (damager != null)
