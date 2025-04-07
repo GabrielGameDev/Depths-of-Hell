@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
 	bool isFreezing = false;
 	PlayerController playerController;
 	CinemachineImpulseSource impulseSource;
+	public GameObject playerMesh;
+	bool isDead;
 
 	private void Awake()
 	{
@@ -21,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		if(isDead) return; // Evita múltiplas ativações
 		Damager damager = collision.GetComponent<Damager>();
 		if (damager != null)
 		{
@@ -31,6 +34,13 @@ public class PlayerHealth : MonoBehaviour
 				LevelManager.instance.GameOver(true);
 			else
 			LevelManager.instance.GameOver(LevelManager.hardcoreMode);
+
+			if(damager.isLava || LevelManager.hardcoreMode)
+			{
+				isDead = true;
+			}
+			
+
 			StartCoroutine(FreezeFrames());
 			
 		}
@@ -74,6 +84,8 @@ public class PlayerHealth : MonoBehaviour
 		isFreezing = true;
 		playerController.DisableMovement(); // Desabilita o movimento do jogador
 		playerController.enabled = false; // Desabilita o movimento do jogador
+		if(LevelManager.hardcoreMode)
+			playerMesh.SetActive(false); // Desabilita o jogador para evitar movimento
 		// Congela imediatamente
 		Time.timeScale = minTimeScale;
 		Time.fixedDeltaTime = 0.02f * Time.timeScale; // Ajusta a física
@@ -90,7 +102,8 @@ public class PlayerHealth : MonoBehaviour
 			elapsedTime += Time.unscaledDeltaTime;
 			yield return null;
 		}
-		playerController.enabled = true; // Reabilita o movimento do jogador
+		if(!LevelManager.hardcoreMode)			
+			playerController.enabled = true; // Reabilita o movimento do jogador
 		// Garante que voltou ao normal
 		Time.timeScale = 1f;
 		Time.fixedDeltaTime = 0.02f;

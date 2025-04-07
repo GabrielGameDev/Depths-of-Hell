@@ -4245,6 +4245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterDemon
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8f95f9a0da1896c4fa77a960b8a4ca45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1499446285878411528, guid: 8f95f9a0da1896c4fa77a960b8a4ca45, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.53546196
@@ -5568,6 +5572,7 @@ MonoBehaviour:
   freezeDuration: 0.1
   returnToNormalTime: 0.5
   minTimeScale: 0.1
+  playerMesh: {fileID: 1430882523}
 --- !u!82 &1864585451
 AudioSource:
   m_ObjectHideFlags: 0
