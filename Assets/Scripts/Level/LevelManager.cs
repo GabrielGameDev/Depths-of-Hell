@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
 		music.PlayDelayed(delay);
 		await Awaitable.WaitForSecondsAsync(delay / 2);
 		playerController.enabled = true;
-		await Awaitable.WaitForSecondsAsync(delay/2);
+		await Awaitable.WaitForSecondsAsync(delay / 2);
 		cineCam.enabled = true;
 		
 	}

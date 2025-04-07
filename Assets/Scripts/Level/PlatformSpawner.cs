@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -40,8 +41,9 @@ public class PlatformSpawner : MonoBehaviour
 	}
 
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void Start()
-    {		
+	IEnumerator Start()
+    {
+		yield return new WaitForSeconds(1);
 		NextLevel();
 		UpdateLevelText();
 	}

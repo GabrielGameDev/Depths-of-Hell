@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 screenLimit;
 	private Rigidbody2D rb; 
     private bool isGrounded;
+	public GameObject jumpFx;
 
 	[Header("Skills")]
 	public bool hasDoubleJump;
@@ -153,6 +154,7 @@ public class PlayerController : MonoBehaviour
 				audioSource.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.Length)]);			
 				rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
 				usedDoubleJump = false;
+				Instantiate(jumpFx, transform.position - new Vector3(0,0.5f,0), jumpFx.transform.rotation);
 			}
 			else if (hasDoubleJump && !usedDoubleJump && !onWall)
 			{
@@ -161,10 +163,10 @@ public class PlayerController : MonoBehaviour
 				animator.SetTrigger("jump");
 				audioSource.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.Length)]);
 				rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+				Instantiate(jumpFx, transform.position - new Vector3(0, 0.5f, 0), jumpFx.transform.rotation);
 			}
 			else if(onWall && !isGrounded)
-			{
-				
+			{				
 				animator.SetTrigger("jump");
 				audioSource.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.Length)]);
 				rb.AddForce(new Vector2(horizontalJumpForce * -direction, jumpForce), ForceMode2D.Impulse);
