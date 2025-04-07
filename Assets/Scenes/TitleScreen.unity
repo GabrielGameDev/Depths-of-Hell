@@ -1818,6 +1818,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6966891795592698072, guid: 39b0b64fcec66bc42ae4bbf7ecbc4061, type: 3}
+      propertyPath: m_text
+      value: Escape from the depths of hell by overcoming challenges. In this mode
+        there are checkpoints (except from falling)
+      objectReference: {fileID: 0}
     - target: {fileID: 8223059653714594283, guid: 39b0b64fcec66bc42ae4bbf7ecbc4061, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
