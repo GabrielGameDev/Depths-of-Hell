@@ -65,8 +65,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Escape from the depths of hell by overcoming challenges. In this mode there
-    are checkpoints
+  m_text: Escape from the depths of hell by overcoming challenges. In this mode It's
+    only game over if you fall into the magma, but every time you die against an
+    enemy it will be counted.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0613126eb8ab9c04ead8a022c0aadbe8, type: 2}
   m_sharedMaterial: {fileID: -1053771917295993019, guid: 0613126eb8ab9c04ead8a022c0aadbe8, type: 2}
@@ -990,7 +991,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: ONLY FOR TRUE DEVILS!!! Escape from the depths of hell by overcoming challenges
-    WITH NO CHECKPOINTS. there is another ending.
+    without taking any damage. there is another ending.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0613126eb8ab9c04ead8a022c0aadbe8, type: 2}
   m_sharedMaterial: {fileID: -1053771917295993019, guid: 0613126eb8ab9c04ead8a022c0aadbe8, type: 2}
