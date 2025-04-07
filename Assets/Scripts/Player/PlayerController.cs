@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 	private Rigidbody2D rb; 
     private bool isGrounded;
 	public GameObject jumpFx;
+	public AudioClip[] footSteps;
 
 	[Header("Skills")]
 	public bool hasDoubleJump;
@@ -197,6 +198,16 @@ public class PlayerController : MonoBehaviour
 		float newVelocityX = Mathf.Lerp(rb.linearVelocity.x, targetVelocityX, stoppingSpeed * Time.fixedDeltaTime);
 		rb.linearVelocity = new Vector2(newVelocityX, rb.linearVelocity.y);		
 		animator.SetFloat("speed", Mathf.Abs(newVelocityX));
+		audioSource.clip = footSteps[Random.Range(0, footSteps.Length)];
+		if (isGrounded && rb.linearVelocity.magnitude > 0.1f && !audioSource.isPlaying)
+		{
+			if(Random.value < 0.25f)
+				audioSource.Play();
+		}
+		//else if (!isGrounded || rb.linearVelocity.magnitude < 0.1f)
+		//{
+		//	audioSource.Stop();
+		//}
 	}
 
 	void ResetOnWall()
