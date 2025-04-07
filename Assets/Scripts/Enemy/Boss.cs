@@ -13,7 +13,7 @@ public class Boss : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {       
-        InvokeRepeating("Fire", fireRate, fireRate);
+        //InvokeRepeating("Fire", fireRate, fireRate);
     }
 
     // Update is called once per frame
@@ -46,20 +46,24 @@ public class Boss : MonoBehaviour
 		}
 
         if(!isMoving)
-        {
+        {			
+            if(!verticalMovement)
+			    transform.Translate(transform.up * speed * Time.deltaTime * 4, Space.Self);
+            else
+				transform.Translate(transform.right * speed * Time.deltaTime * 4);
 			
-			transform.Translate(transform.up * speed * Time.deltaTime * 4, Space.Self);
+			
 		}
         
 	}
 
-    void Fire()
+    public void Fire()
     {
         if (!isMoving)
         {
 			return;
 		}
-        Mover fireBallInstance = Instantiate(fireBall, firePoint.position, transform.rotation);
+        Mover fireBallInstance = Instantiate(fireBall, firePoint.position, firePoint.rotation);
     }
 
     public void StopMoving()
