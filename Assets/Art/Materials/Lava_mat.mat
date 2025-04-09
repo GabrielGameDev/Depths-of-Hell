@@ -64,7 +64,7 @@ Material:
     - _waveSpeed: 1.5
     m_Colors:
     - _FresnelColor: {r: 4.030381, g: 0.9756312, b: 0, a: 1}
-    - _LiquidColor: {r: 4, g: 0.4677688, b: 0, a: 1}
+    - _LiquidColor: {r: 13.766361, g: 1.6098685, b: 0, a: 1}
     - _SurfaceColor: {r: 5.0380316, g: 1.3958904, b: 0.40399316, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
