@@ -14,12 +14,21 @@ public class LevelManager : MonoBehaviour
 	public PlayerController playerController;
 	public TMP_Text deathCountText;
 	int deathCount = 0;
+	public GameObject retryPanel;
+	public GameObject startPanel;
+	public GameObject platformSpawner;
 	public static bool hardcoreMode = false;
 	public Volume finishGameVolume;
 	public bool isGameOver = false;
+	public static bool isRestarting;
 	private void Awake()
 	{
 		instance = this;
+		if (isRestarting)
+		{
+			startPanel.SetActive(false);
+			platformSpawner.SetActive(true);
+		}
 	}
 
 	public void LoadLevel(int buildIndex)
@@ -37,9 +46,21 @@ public class LevelManager : MonoBehaviour
 			cineCam.enabled = false;
 			lava.enabled = true;
 			await Awaitable.WaitForSecondsAsync(3.25f);
-			LoadLevel(0);
+			retryPanel.SetActive(true);
 		}
 		
+	}
+
+	public void RetryLevel()
+	{
+		isRestarting = true;
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	public void QuitToMenu()
+	{
+		isRestarting = false;
+		SceneManager.LoadScene(0);
 	}
 
 	public async void PlayMusic(float delay)
